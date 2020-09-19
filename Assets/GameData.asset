@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a31159a1f777e894fa9ad52368f36acc, type: 3}
+  m_Name: GameData
+  m_EditorClassIdentifier: 
+  stories:
+  - name: Test
+    Bck: {fileID: 21300000, guid: 755db7dcedb58c549a374a8a6efc5325, type: 3}
+    Image: {fileID: 21300000, guid: 755db7dcedb58c549a374a8a6efc5325, type: 3}
+    panelsPrefabs:
+    - {fileID: 1983133672831884, guid: 02a84a60791fa284fa09a26ebc95c42e, type: 3}
+    - {fileID: 1682668800949176, guid: c3352c158a5488c46b8be52354db8396, type: 3}
+    - {fileID: 1000200017529932, guid: f3116eca31152e5459431cff10dce776, type: 3}
+    - {fileID: 1713711614107502, guid: 4099fae990168f24bb2556e441f57561, type: 3}
+    mode: 2
+  missions:
+  - name: Mission1
+    prefabOfSavingObject: {fileID: 0}
+    numberOfCreaturesNeedToBeSaved: 5
+    numberOfSavedCreatures: 0
+    Bck: {fileID: 21300000, guid: dc1ce52addde7b9418608ade9fb4a089, type: 3}
+    Image: {fileID: 21300000, guid: dc1ce52addde7b9418608ade9fb4a089, type: 3}
+    panelsPrefabs:
+    - {fileID: 3262260459256794521, guid: c88a8e511e5bed347bcf48ef13bd4a44, type: 3}
+    missionCompleted: 0
+    mode: 1
+  chanlanges:
+  - metersToPass: 100
+  - metersToPass: 200
