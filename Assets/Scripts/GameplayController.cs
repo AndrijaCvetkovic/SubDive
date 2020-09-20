@@ -6,17 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class GameplayController : MonoBehaviour {
 
-    public GameData gameData;
+
     public GameObject bckImage;
     public GameObject bckPanels;
     public List<GameObject> panels;
     public int points = 0;
     public int pointsToAdd = 1;
     public Text textPoints;
-    public bool parachuteActivated = false;
-    public Story story;
-    public Mission choosenMission;
-    public Mode mode;
+    public Character charController;
 
 	// Use this for initialization
 	void Start () {
@@ -31,26 +28,6 @@ public class GameplayController : MonoBehaviour {
 
     void InitStoryOrMission()
     {
-        if (GameManager.instance.choosenGame == Mode.whileNotHitObsticle)
-        {
-            story = GameManager.instance.choosenStory;
-            mode = story.mode;
-            panels = new List<GameObject>();
-            foreach (GameObject g in story.panelsPrefabs)
-                panels.Add(g);
-            bckImage.GetComponent<Image>().sprite = story.Bck;
-        }
-        else if (GameManager.instance.choosenGame == Mode.saveTheCreatures)
-        {
-            choosenMission = GameManager.instance.choosenMission;
-            mode = choosenMission.mode;
-            panels = new List<GameObject>();
-            foreach (GameObject g in choosenMission.panelsPrefabs)
-                panels.Add(g);
-            bckImage.GetComponent<Image>().sprite = choosenMission.Bck;
-        }
-
-
 
         AddNewPanelAndDeleteFristOne();
         AddNewPanelAndDeleteFristOne();
@@ -70,15 +47,6 @@ public class GameplayController : MonoBehaviour {
         //Debug.Log(y);
         g.transform.localPosition = new Vector3(0, y - 2724, 0);
 
-        if(GameManager.instance.choosenGame == Mode.saveTheCreatures && choosenMission.missionCompleted)
-        {
-            foreach (GameObject p in g.GetComponent<PanelControllerForSaveCreaturesMode>().creaturesToSave)
-            {
-                Destroy(p);
-            }
-            g.GetComponent<PanelControllerForSaveCreaturesMode>().creaturesToSave = new List<GameObject>();
-        }
-
         Destroy(bckPanels.transform.GetChild(0).gameObject);
     }
 
@@ -94,14 +62,7 @@ public class GameplayController : MonoBehaviour {
 
     public void EndGame()
     {
-        if (GameManager.instance.choosenGame == Mode.whileNotHitObsticle)
-        {
-            SceneManager.LoadScene("ChooseStory");
-        }
-        else
-        {
-            SceneManager.LoadScene("ChooseMission");
-        }
+        SceneManager.LoadScene("Main");
 
     } 
 

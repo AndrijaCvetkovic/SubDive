@@ -12,17 +12,17 @@ public class MainScene : MonoBehaviour {
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("ChooseStory");
-    }
-
-    public void PlayMissions()
-    {
-        SceneManager.LoadScene("ChooseMission");
+        SceneManager.LoadScene("Gameplay");
     }
 
     public void ChangeSkin()
     {
         SceneManager.LoadScene("ChooseSkin");
+    }
+
+    public void exit()
+    {
+        Application.Quit();
     }
 
 }

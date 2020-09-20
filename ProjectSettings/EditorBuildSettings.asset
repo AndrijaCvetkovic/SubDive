@@ -9,15 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Main.unity
     guid: 6d12c50d75ff5ba478d4d08f8c85d8d5
   - enabled: 1
-    path: Assets/Scenes/ChooseSkin.unity
-    guid: 19d1b9dd529838f44be3c1dc2f6b0af4
-  - enabled: 1
-    path: Assets/Scenes/ChooseStory.unity
-    guid: 32130159cae45c24581af3de67b6e420
-  - enabled: 1
-    path: Assets/Scenes/ChooseMission.unity
-    guid: 01918d841572ed34ba4c616cf28cc88f
-  - enabled: 1
     path: Assets/Scenes/Gameplay.unity
     guid: a4b1ba0df07e3ac4abfd8c39d768b02e
   m_configObjects: {}

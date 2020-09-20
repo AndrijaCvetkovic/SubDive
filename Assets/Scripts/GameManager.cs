@@ -7,10 +7,6 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance = null;
 
-    public Story choosenStory;
-    public Mission choosenMission;
-    public Mode choosenGame;
-
     //Awake is always called before any Start functions
     void Awake()
     {

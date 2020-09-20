@@ -28,10 +28,8 @@ public class BckPanelsController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(gc.parachuteActivated == false)
-            transform.Translate(0, speed, 0);
-        else
-            transform.Translate(0, 0.03f, 0);
+
+        transform.Translate(0, 0.03f, 0);
 
         currentTime = Time.time;
         meters += (speed * (currentTime - startTime))/10;
@@ -52,18 +50,22 @@ public class BckPanelsController : MonoBehaviour {
             {
                 speed = speed + speedToAdd;
                 prevSpeed = prevSpeed + speedToAdd;
+                gc.charController.moveSpeed += 0.2f;
             }
             else if (speed < 2)
             {
                 speed = speed + speedToAdd / 2;
                 prevSpeed = prevSpeed + speedToAdd;
+                gc.charController.moveSpeed += 0.1f;
             }
             else
             {
                 speed = speed + speedToAdd / 3;
                 prevSpeed = prevSpeed + speedToAdd;
+                gc.charController.moveSpeed += 0.05f;
             }
             gc.pointsToAdd += 1;
+           
         }
         
     }

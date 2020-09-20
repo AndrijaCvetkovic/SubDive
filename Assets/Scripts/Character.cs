@@ -13,8 +13,7 @@ public class Character : MonoBehaviour {
     public float moveSpeed = 1;
     public bool boosted = false;
     public bool shield = false;
-    bool parachuteReady = true;
-    public Image parachuteImageIcon;
+
 
     // Use this for initialization
     void Start () {
@@ -66,35 +65,8 @@ public class Character : MonoBehaviour {
     {
         if(collision.gameObject.name == "Border")
         {
-            if (gc.mode == Mode.saveTheCreatures)
-            {
-                if (collision.gameObject.transform.parent.GetComponent<PanelControllerForSaveCreaturesMode>().creaturesToSave.Count == 0)
-                {
-                    Debug.Log("A");
-                    gc.choosenMission.numberOfSavedCreatures += 1;
-                    if (gc.choosenMission.numberOfSavedCreatures >= gc.choosenMission.numberOfCreaturesNeedToBeSaved)
-                    {
-                        Debug.Log("WINED MISSION");
-                        //PlayerPrefs.SetInt("MissionNo",)
-                        gc.choosenMission.missionCompleted = true;
-                    }
-                    gc.AddNewPanelAndDeleteFristOne();
-                }
-                else
-                {
-                    Debug.Log("LOSE");
-                }
-            }
-            else if (gc.mode == Mode.whileNotHitObsticle)
-            {
-                Debug.Log("A");
-                gc.AddNewPanelAndDeleteFristOne();
-            }
-            else if (gc.mode == Mode.landWithParachute)
-            {
-                Debug.Log("A");
-                gc.AddNewPanelAndDeleteFristOne();
-            }
+
+            gc.AddNewPanelAndDeleteFristOne();
         }
         else if (collision.gameObject.tag == "ExtraPoints")
         {
@@ -148,36 +120,6 @@ public class Character : MonoBehaviour {
         boosted = false;
     }
 
-    IEnumerator parachuteAbility()
-    {
-        parachuteImageIcon.fillAmount = 0;
-        parachuteReady = false;
-        yield return new WaitForSeconds(4f);
-        gc.parachuteActivated = false;
-    }
-
-    public void startParachute()
-    {
-        if (parachuteReady)
-        {
-            gc.parachuteActivated = true;
-            StartCoroutine("parachuteAbility");
-            StartCoroutine("refreshParachute");
-        }
-    }
-
-    IEnumerator refreshParachute()
-    {
-        int counter = 0;
-        while (counter < 20)
-        {
-            yield return new WaitForSeconds(1f);
-            counter++;
-            parachuteImageIcon.fillAmount += 0.5f / 10f;
-            Debug.Log("Counter " + counter);
-        }
-        parachuteReady = true;
-    }
 
     IEnumerator shieldActivated()
     {
