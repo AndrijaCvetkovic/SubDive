@@ -29,8 +29,8 @@ public class BckPanelsController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        transform.Translate(0, 0.03f, 0);
-
+        //transform.Translate(0, 0.03f, 0);
+        transform.Translate(0, speed, 0);
         currentTime = Time.time;
         meters += (speed * (currentTime - startTime))/10;
         metersLabel.text = "Distance: " + meters.ToString(); //razmisliti o tome kako  ce chalangi ici,kada se predje npr 100 dali posle 200 prelazi jos jedan ili se ceka sledeci game da bi mogao da predje sledeci chalange

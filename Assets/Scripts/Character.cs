@@ -88,6 +88,7 @@ public class Character : MonoBehaviour {
         else if(collision.gameObject.tag == "Obsticle" && shield == false)
         {
             Debug.Log("END");
+            //ovde je kraj
             gc.EndGame();
         }
     }

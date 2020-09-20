@@ -22,7 +22,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateMachineNode
     - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
@@ -36,7 +35,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
-    - UnityEngine.UI.Outline
     - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/Gameplay.unity:
@@ -53,6 +51,8 @@ ScriptsOnlyBuild:
     - Class: 48
       Script: {instanceID: 0}
     - Class: 50
+      Script: {instanceID: 0}
+    - Class: 58
       Script: {instanceID: 0}
     - Class: 61
       Script: {instanceID: 0}
@@ -86,8 +86,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13472}
     - Class: 114
       Script: {instanceID: 13796}
-    - Class: 114
-      Script: {instanceID: 14180}
     - Class: 114
       Script: {instanceID: 14264}
     - Class: 115
@@ -692,12 +690,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.Advertisements.dll
     namespaceName: UnityEngine.Advertisements.Utilities
     className: CoroutineExecutor
-  - hash:
-      serializedVersion: 2
-      Hash: 8450085e29efc3ae16e3aa8ca48a5b4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PanelControllerForSaveCreaturesMode
   - hash:
       serializedVersion: 2
       Hash: 0fd6822f6177297bd0eb4d83cc7a9030
