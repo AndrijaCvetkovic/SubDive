@@ -364,7 +364,7 @@ MonoBehaviour:
   points: 0
   pointsToAdd: 1
   textPoints: {fileID: 1464292639}
-  parachuteActivated: 0
+  charController: {fileID: 1037456377}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -998,7 +998,6 @@ MonoBehaviour:
   moveSpeed: 3
   boosted: 0
   shield: 0
-  parachuteImageIcon: {fileID: 1993544805}
 --- !u!1 &1152643507
 GameObject:
   m_ObjectHideFlags: 0

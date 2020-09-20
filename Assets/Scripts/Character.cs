@@ -90,12 +90,6 @@ public class Character : MonoBehaviour {
             Debug.Log("END");
             gc.EndGame();
         }
-        else if (collision.gameObject.tag == "ToSave")
-        {
-            collision.gameObject.transform.parent.GetComponent<PanelControllerForSaveCreaturesMode>().creaturesToSave.Remove(collision.gameObject);
-            Destroy(collision.gameObject); //animacija pre Destory-a
-
-        }
     }
 
 
