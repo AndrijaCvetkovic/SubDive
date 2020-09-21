@@ -6,8 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class MainScene : MonoBehaviour {
 
+    public Text highscore;
     private void Start()
     {
+        if (PlayerPrefs.HasKey("highscore"))
+        {
+            highscore.text = PlayerPrefs.GetInt("highscore").ToString();
+        }
+        else
+            highscore.gameObject.active = false;
     }
 
     public void PlayGame()

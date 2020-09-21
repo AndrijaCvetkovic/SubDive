@@ -62,8 +62,14 @@ public class GameplayController : MonoBehaviour {
 
     public void EndGame()
     {
+        int highscore_tmp = PlayerPrefs.GetInt("highscore");
+
+        if (points > highscore_tmp)
+            PlayerPrefs.SetInt("highscore", points);
+
         SceneManager.LoadScene("Main");
 
     } 
+
 
 }
